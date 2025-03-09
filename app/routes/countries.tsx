@@ -18,7 +18,7 @@ export default function Countries() {
         return (
             <Link
                 to="#"
-                className="text-normal"
+                className="text-normal hover:underline"
             >
                 {country.name.common}
             </Link>
@@ -30,7 +30,8 @@ export default function Countries() {
     return (
         <div className="flex flex-col justify-center items-center gap-y-8 mt-8">
             <h1 className="font-bold text-2xl">List of countries:</h1>
-            <main className="md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <main className="flex flex-col justify-center items-center gap-y-8
+                md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center">
                 {listOfCountries}
             </main>
         </div>
