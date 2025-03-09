@@ -5,7 +5,7 @@ export default function MainLayout() {
         <div className="flex flex-col min-h-dvh">
             <nav className="border-b-2 flex justify-center items-center h-24">
                 <Link
-                    className="text-lg"
+                    className="text-2xl"
                     to="/"
                 >
                     REST <span className="text-blue-400 italic">Countries</span>
