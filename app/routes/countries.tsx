@@ -19,9 +19,12 @@ export default function Countries() {
             <Link
                 key={country.name.common}
                 to="#"
-                className="text-normal hover:underline"
+                className="text-normal hover:underline flex flex-col justify-center items-center
+                    bg-neutral-100 px-2 py-4 rounded-3xl shadow-xl"
             >
-                {country.name.common}
+                <p className="font-bold">{country.name.common}</p>
+                <p>{country.region}</p>
+                <p>Population: {country.population}</p>
             </Link>
         )
     })
@@ -29,8 +32,8 @@ export default function Countries() {
     console.log(listOfCountries)
 
     return (
-        <div className="flex flex-col justify-center items-center gap-y-8 mt-8">
-            <h1 className="font-bold text-2xl">List of countries:</h1>
+        <div className="flex flex-col justify-center items-center gap-y-8 mt-8 mb-8">
+            <h1 className="font-extrabold text-2xl">List of countries:</h1>
             <main className="flex flex-col justify-center items-center gap-y-8
                 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center">
                 {listOfCountries}
