@@ -17,6 +17,7 @@ export default function Countries() {
     const listOfCountries = sortedData?.map((country: any) => {
         return (
             <Link
+                key={country.name.common}
                 to="#"
                 className="text-normal hover:underline"
             >
