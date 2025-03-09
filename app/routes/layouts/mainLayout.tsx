@@ -3,7 +3,7 @@ import { Link, Outlet } from "react-router";
 export default function MainLayout() {
     return (
         <div className="flex flex-col min-h-dvh">
-            <nav className="border-b-2 flex justify-center items-center">
+            <nav className="border-b-2 flex justify-center items-center h-24">
                 <Link
                     className="text-lg"
                     to="/"
