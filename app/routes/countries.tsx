@@ -10,7 +10,11 @@ export async function clientLoader({ request }: LoaderFunctionArgs) {
 export default function Countries() {
     const data = useLoaderData()
 
-    const listOfCountries = data?.map((country: any) => {
+    const sortedData = data?.sort((a: any, b: any) => {
+        return a.name.common.localeCompare(b.name.common)
+    })
+
+    const listOfCountries = sortedData?.map((country: any) => {
         return (
             <Link
                 to="#"
