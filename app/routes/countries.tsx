@@ -50,13 +50,13 @@ export default function Countries() {
             >
             </input>
             <h1 className="font-extrabold text-2xl text-white">List of countries:</h1>
-            {listOfCountries.length > 0 ? (
+            {listOfCountries.length > 0 && search ? (
                 <main className="flex flex-col justify-center items-center gap-8
                  md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center">
                     {listOfCountries}
                 </main>
             ) :
-                <h1 className="text-white font-bold text-xl">No results...</h1>
+                <h1 className="text-white font-bold text-xl">No results currently...</h1>
             }
         </div>
     )
