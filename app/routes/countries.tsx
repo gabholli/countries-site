@@ -27,8 +27,8 @@ export default function Countries() {
             <Link
                 key={country.name.common}
                 to="#"
-                className="text-normal flex flex-col justify-center items-center
-                    bg-neutral-100 px-2 py-4 rounded-3xl shadow-xl"
+                className="text-normal flex flex-col justify-center 
+                    bg-neutral-100 w-74 px-8 py-4 rounded-3xl shadow-xl"
             >
                 <p className="font-bold">{country.name.common}</p>
                 <p>{country.region}</p>
@@ -50,9 +50,9 @@ export default function Countries() {
             >
             </input>
             <h1 className="font-extrabold text-2xl">List of countries:</h1>
-            <main className="flex flex-col justify-center items-center gap-y-8
-                md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center">
-                {listOfCountries}
+            <main className="flex flex-col justify-center items-center gap-8
+                 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center">
+                {listOfCountries.length > 0 ? listOfCountries : <h1>No results...</h1>}
             </main>
         </div>
     )
