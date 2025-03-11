@@ -9,6 +9,6 @@ export default function Home() {
         className="border-2 rounded-full py-2 px-4 bg-blue-400 text-white flex text-center"
       >Find out about a country
       </Link>
-    </div>
+    </div >
   )
 }

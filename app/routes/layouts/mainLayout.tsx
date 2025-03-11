@@ -11,7 +11,11 @@ export default function MainLayout() {
                     REST <span className="text-blue-400 italic">Countries</span>
                 </Link>
             </nav>
-            <div className="flex flex-grow items-center justify-center">
+            <div className="flex flex-grow items-center justify-center
+                bg-cover bg-center bg-fixed
+            "
+                style={{ backgroundImage: "url('city.jpg')" }}
+            >
                 <Outlet />
             </div>
         </div>

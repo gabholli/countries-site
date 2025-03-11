@@ -42,7 +42,7 @@ export default function Countries() {
     return (
         <div className="flex flex-col justify-center items-center gap-y-8 mt-8 mb-8">
             <input
-                className="px-2 py-4 indent-4 rounded-2xl border-black border-2"
+                className="px-2 py-4 indent-4 rounded-2xl bg-black text-white border-2"
                 placeholder="Enter country here..."
                 type="text"
                 value={search}
@@ -50,10 +50,14 @@ export default function Countries() {
             >
             </input>
             <h1 className="font-extrabold text-2xl">List of countries:</h1>
-            <main className="flex flex-col justify-center items-center gap-8
+            {listOfCountries.length > 0 ? (
+                <main className="flex flex-col justify-center items-center gap-8
                  md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center">
-                {listOfCountries.length > 0 ? listOfCountries : <h1>No results...</h1>}
-            </main>
+                    {listOfCountries}
+                </main>
+            ) :
+                <h1 className="text-white font-bold text-xl">No results...</h1>
+            }
         </div>
     )
 }
