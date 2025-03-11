@@ -2,7 +2,7 @@ import { Link } from "react-router";
 
 export default function Home() {
   return (
-    <div className="flex flex-col justify-center items-center p-4 m-2 gap-y-4 text-2xl bg-neutral-100 rounded-4xl">
+    <div className="flex flex-col justify-center items-center p-4 m-2 gap-y-4 text-2xl bg-neutral-100 rounded-4xl shadow-2xl">
       <h1 className="text-center md:w-80">Welcome to REST Countries, a site where you can find out about your favorite country</h1>
       <Link
         to="countries"
