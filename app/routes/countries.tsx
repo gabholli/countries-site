@@ -46,7 +46,7 @@ export default function Countries() {
         <div className="flex flex-col justify-center items-center gap-y-8 mt-8 mb-8">
             <div className="flex flex-col md:flex-row md:gap-x-4 gap-y-4">
                 <input
-                    className="px-2 py-4 indent-4 rounded-2xl bg-black text-white border-2"
+                    className="px-2 py-4 indent-4 rounded-2xl bg-black text-white border-2 border-white"
                     placeholder="Enter country here..."
                     type="text"
                     value={search}
@@ -54,7 +54,7 @@ export default function Countries() {
                 >
                 </input>
                 <select
-                    className="text-white bg-black text-xl px-2 py-4 rounded-2xl"
+                    className="text-white bg-black text-xl px-2 py-4 rounded-2xl border-2 border-white"
                     onChange={(e) => { setRegion(e.target.value) }}
                 >
                     <option value="">Select a region</option>
