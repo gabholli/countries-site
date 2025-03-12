@@ -22,7 +22,8 @@ export default function countryDetail() {
     }
 
     return (
-        <main className="flex flex-col justify-center items-center gap-y-10 p-4">
+        <main className="flex flex-col justify-center items-center gap-y-10 p-4 m-4 bg-neutral-100
+            rounded-2xl">
             <img
                 className="shadow-2xl"
                 src={countryInfo.flagImage}
