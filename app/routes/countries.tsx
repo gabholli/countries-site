@@ -27,7 +27,7 @@ export default function Countries() {
         return (
             <Link
                 key={country.name.common}
-                to="#"
+                to={country.name.common}
                 className="text-normal flex flex-col justify-center 
                     bg-neutral-100 w-74 px-8 py-4 rounded-3xl shadow-xl"
             >
