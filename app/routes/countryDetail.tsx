@@ -35,7 +35,7 @@ export default function countryDetail() {
 
             <h1><span className="font-bold text-lg">Country Name:</span> {countryInfo.name}</h1>
             <h1><span className="font-bold text-lg">Region:</span> {countryInfo.region}</h1>
-            <h1><span className="font-bold text-lg">Population</span> {countryInfo.population}</h1>
+            <h1><span className="font-bold text-lg">Population</span> {countryInfo.population.toLocaleString()}</h1>
             <h1><span className="font-bold text-lg">Capital City:</span> {countryInfo.capital}</h1>
         </main>
     )
