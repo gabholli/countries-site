@@ -24,13 +24,15 @@ export default function countryDetail() {
     return (
         <main className="flex flex-col justify-center items-center gap-y-10 p-4 m-4 bg-neutral-100
             rounded-2xl">
-            <img
-                className="shadow-2xl"
-                src={countryInfo.flagImage}
-                alt={countryInfo.altText}
-            >
+            {countryInfo.flagImage && (
+                <img
+                    className="shadow-2xl"
+                    src={countryInfo.flagImage}
+                    alt={countryInfo.altText}
+                >
+                </img>
+            )}
 
-            </img>
             <h1><span className="font-bold text-lg">Country Name:</span> {countryInfo.name}</h1>
             <h1><span className="font-bold text-lg">Region:</span> {countryInfo.region}</h1>
             <h1><span className="font-bold text-lg">Population</span> {countryInfo.population}</h1>
