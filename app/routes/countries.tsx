@@ -33,7 +33,7 @@ export default function Countries() {
             >
                 <p className="font-bold">{country.name.common}</p>
                 <p>{country.region}</p>
-                <p>Population: {country.population}</p>
+                <p>Population: {country.population.toLocaleString()}</p>
             </Link>
         )
     })
