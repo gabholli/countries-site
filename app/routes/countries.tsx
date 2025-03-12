@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useLoaderData, type LoaderFunctionArgs } from "react-router";
+import BackToTop from "~/components/backToTop";
 
 export async function clientLoader({ request }: LoaderFunctionArgs) {
     const response = await fetch("https://restcountries.com/v3.1/all")
@@ -58,6 +59,7 @@ export default function Countries() {
             ) :
                 <h1 className="text-white font-bold text-xl">No results...</h1>
             }
+            <BackToTop />
         </div>
     )
 }
