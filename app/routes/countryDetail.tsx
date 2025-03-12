@@ -14,7 +14,7 @@ export default function countryDetail() {
     console.log(data)
     const countryInfo = {
         name: data[0]?.name?.common || "N/A ",
-        flagImage: data[0]?.flags?.png || "N/A",
+        flagImage: data[0]?.flags?.png || "",
         altText: data[0]?.flags?.alt || "N/A",
         region: data[0]?.region || "N/A",
         population: data[0]?.population || "N/A",
