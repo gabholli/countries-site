@@ -57,6 +57,7 @@ export default function Countries() {
                     className="text-white bg-black text-xl px-2 py-4 rounded-2xl"
                     onChange={(e) => { setRegion(e.target.value) }}
                 >
+                    <option value="">Select a region</option>
                     <option value="americas">Americas</option>
                     <option value="europe">Europe</option>
                     <option value="africa">Africa</option>
