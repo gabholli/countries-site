@@ -5,7 +5,7 @@ export default function About() {
             <h1 className="text-4xl text-center">About This Website:</h1>
             <p className="text-lg">
                 This website shows information about countries throughtout the world,
-                including country names, population sizes, capitals. Also shown is each
+                including country names, population sizes, and capitals. Also shown is each
                 country flag.
             </p>
             <p className="text-lg">
