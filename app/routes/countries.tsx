@@ -11,12 +11,14 @@ export async function clientLoader({ request }: LoaderFunctionArgs) {
 
 export default function Countries() {
     const [search, setSearch] = useState("")
+    const [region, setRegion] = useState("")
     const data = useLoaderData()
 
     const filteredCountries = data?.filter((country: any) => {
+        const matchesRegion = !region || country.region.toLowerCase().includes(region.toLowerCase())
         const matchesSearch =
             !search || country.name.common.toLowerCase().includes(search.toLowerCase())
-        return matchesSearch
+        return matchesSearch && matchesRegion
     })
 
     const sortedData = filteredCountries?.sort((a: any, b: any) => {
@@ -42,14 +44,27 @@ export default function Countries() {
 
     return (
         <div className="flex flex-col justify-center items-center gap-y-8 mt-8 mb-8">
-            <input
-                className="px-2 py-4 indent-4 rounded-2xl bg-black text-white border-2"
-                placeholder="Enter country here..."
-                type="text"
-                value={search}
-                onChange={(e) => { setSearch(e.target.value) }}
-            >
-            </input>
+            <div className="flex gap-x-4">
+                <input
+                    className="px-2 py-4 indent-4 rounded-2xl bg-black text-white border-2"
+                    placeholder="Enter country here..."
+                    type="text"
+                    value={search}
+                    onChange={(e) => { setSearch(e.target.value) }}
+                >
+                </input>
+                <select
+                    className="text-white bg-black text-xl px-2 py-4 rounded-2xl"
+                    onChange={(e) => { setRegion(e.target.value) }}
+                >
+                    <option value="americas">Americas</option>
+                    <option value="europe">Europe</option>
+                    <option value="africa">Africa</option>
+                    <option value="asia">Asia</option>
+                    <option value="oceania">Oceania</option>
+
+                </select>
+            </div>
             <h1 className="font-extrabold text-2xl text-white">List of countries:</h1>
             {listOfCountries.length > 0 ? (
                 <main className="flex flex-col justify-center items-center gap-8
