@@ -97,7 +97,7 @@ export default function Countries() {
                         <li key={number} className="">
                             <button
                                 onClick={() => paginate(number)}
-                                className="cursor-pointer w-4 hover:underline"
+                                className="cursor-pointer w-4 hover:underline hover:bg-neutral-200 hover:rounded-full"
                             >
                                 {number}
                             </button>
