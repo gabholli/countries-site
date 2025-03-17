@@ -10,6 +10,7 @@ export async function clientLoader({ request }: LoaderFunctionArgs) {
 }
 
 export default function Countries() {
+    const searchItemFromLocalStorage = JSON.parse(localStorage.getItem("searchItem"))
     const [search, setSearch] = useState("")
     const [region, setRegion] = useState("")
     const [currentPage, setCurrentPage] = useState(1)
@@ -17,6 +18,10 @@ export default function Countries() {
 
     const data = useLoaderData()
 
+    function handleChange(event: { target: { name: any; value: any; }; }) {
+        setSearch(event.target.value)
+        localStorage.setItem("searchItem", JSON.stringify(event.target.value))
+    }
     useEffect(() => {
         setCurrentPage(1)
     }, [search, region])
@@ -66,8 +71,8 @@ export default function Countries() {
                     className="px-2 py-4 indent-4 rounded-2xl bg-black text-white border-2 border-white"
                     placeholder="Enter country here..."
                     type="text"
-                    value={search}
-                    onChange={(e) => { setSearch(e.target.value) }}
+                    value={searchItemFromLocalStorage || ""}
+                    onChange={handleChange}
                 >
                 </input>
                 <select
