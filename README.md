@@ -2,7 +2,7 @@
 Countries
 
 ## Description
-This project contains files for a dog information website, created using the following:
+This project contains files for a country information website, created using the following:
 
 - React.js
 - TypeScript
