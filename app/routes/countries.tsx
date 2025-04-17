@@ -10,7 +10,9 @@ export async function clientLoader({ request }: LoaderFunctionArgs) {
 }
 
 export default function Countries() {
-    const searchItemFromLocalStorage = JSON.parse(localStorage.getItem("searchItem") || "")
+    const searchItemFromLocalStorage = typeof window !== "undefined"
+        ? JSON.parse(localStorage.getItem("searchItem") || '""')
+        : ""
     const [search, setSearch] = useState("")
     const [region, setRegion] = useState("")
     const [currentPage, setCurrentPage] = useState(1)
