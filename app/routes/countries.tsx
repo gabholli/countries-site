@@ -10,7 +10,8 @@ export async function clientLoader({ request }: LoaderFunctionArgs) {
 }
 
 export default function Countries() {
-    const searchItemFromLocalStorage = JSON.parse(localStorage.getItem("searchItem") || "")
+    const storedSearchItem = localStorage.getItem("searchItem")
+    const searchItemFromLocalStorage = storedSearchItem ? JSON.parse(storedSearchItem) : ""
     const [search, setSearch] = useState("")
     const [region, setRegion] = useState("")
     const [currentPage, setCurrentPage] = useState(1)
@@ -26,11 +27,13 @@ export default function Countries() {
         setCurrentPage(1)
     }, [search, region])
 
-    const filteredCountries = data?.filter((country: any) => {
+    const filteredCountries = Array.isArray(data) 
+        ? data.filter((country: any) => {
         const matchesRegion = !region || country.region.toLowerCase().includes(region.toLowerCase())
         const matchesSearch = !search || country.name.common.toLowerCase().includes(search.toLowerCase())
         return matchesSearch && matchesRegion
     })
+    : []
 
     const sortedData = filteredCountries?.sort((a: any, b: any) => {
         return a.name.common.localeCompare(b.name.common)
