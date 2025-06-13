@@ -3,10 +3,17 @@ import { Link, useLoaderData, type LoaderFunctionArgs } from "react-router";
 import BackToTop from "~/components/backToTop";
 
 export async function clientLoader({ request }: LoaderFunctionArgs) {
-    const response = await fetch("https://restcountries.com/v3.1/all")
-    const data = await response.json()
-    console.log(data)
-    return data
+    try {
+        const response = await fetch("https://restcountries.com/v3.1/all?fields=name,region,population,flags")
+        if (!response.ok) {
+            throw new Error("HTTP error " + response.status)
+        }
+        const data = await response.json()
+        return data
+    } catch (error) {
+        console.error("Error fetching countries:", error)
+        return []
+    }
 }
 
 export default function Countries() {
